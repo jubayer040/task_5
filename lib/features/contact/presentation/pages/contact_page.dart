@@ -13,15 +13,15 @@ class _ContactPageState extends State<ContactPage> {
   final _searchFiled = TextEditingController();
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         MyDimens().getNormalAppBar("Gain Solution",
             [MyDimens().getNotificationIcon(3), SizedBox(width: 15)], context),
         CmSearchField(controller: _searchFiled),
-        const SizedBox(height: 15),
-        Text("42 Contacts"),
-        const SizedBox(height: 15),
-        Expanded(child: ContactList()),
+        const SizedBox(height: 5),
+        SizedBox(height: size.height * .7, child: ContactList()),
       ],
     );
   }

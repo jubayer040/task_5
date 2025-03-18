@@ -29,7 +29,7 @@ class ProfileAssignedRole extends StatelessWidget {
                   margin: EdgeInsets.only(right: 15),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(12),
-                    color: Colors.grey[50],
+                    color: MyColor.cardBackgroundColor,
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -72,7 +72,7 @@ class ProfileAssignedRole extends StatelessWidget {
                 ),
               ),
             ),
-          )
+          ),
         ],
       ),
     );
