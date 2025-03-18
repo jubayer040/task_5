@@ -26,6 +26,13 @@ class MyDimens {
   AppBar getNormalAppBar(String title, List<Widget> actions, BuildContext ctx,
           [bool backButton = false]) =>
       AppBar(
+        centerTitle: true,
+        leading: backButton
+            ? IconButton(
+                onPressed: () => Navigator.pop(ctx),
+                icon: const Icon(Icons.close,color: MyColor.iconDark),
+              )
+            : const SizedBox(),
         title: Text(
           title,
           style: Theme.of(ctx).textTheme.titleMedium!.copyWith(fontSize: 21),
@@ -56,15 +63,41 @@ class MyDimens {
       );
 
   Text getBodySecondaryText(String title, BuildContext context,
-          {Color color = MyColor.textThird}) =>
+          {Color color = MyColor.textThird,
+          FontWeight weight = FontWeight.bold}) =>
       Text(
         title,
         style: Theme.of(context)
             .textTheme
             .bodySmall!
-            .copyWith(fontWeight: FontWeight.bold, color: color),
+            .copyWith(fontWeight: weight, color: color),
       );
 
   Center getLoadingIndicator() =>
       const Center(child: CircularProgressIndicator());
+
+  Widget getPriorityBoxItem(String title, BuildContext context, Color? color) =>
+      Container(
+        padding: EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(7),
+          color: Colors.white,
+          border: Border.all(color: MyColor.inActiveColor, width: .8),
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            if (color != null) ...[
+              Container(
+                height: 7,
+                width: 7,
+                decoration: BoxDecoration(shape: BoxShape.circle, color: color),
+              ),
+              const SizedBox(width: 5),
+            ],
+            MyDimens().getBodySecondaryText(title, context,
+                weight: FontWeight.normal),
+          ],
+        ),
+      );
 }

@@ -24,19 +24,18 @@ class CmDropDownField extends StatelessWidget {
           isDense: true,
           dropdownColor: Colors.white,
           decoration: InputDecoration(
-            labelText: title,
             hintText: title,
             filled: true,
             fillColor: MyColor.cardBackgroundColor,
             contentPadding:
                 const EdgeInsets.only(left: 20, right: 5, top: 13, bottom: 13),
             focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(30),
+              borderRadius: BorderRadius.circular(7),
               borderSide:
                   const BorderSide(color: MyColor.inActiveColor, width: 0.3),
             ),
             enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(30),
+              borderRadius: BorderRadius.circular(7),
               borderSide:
                   const BorderSide(color: MyColor.inActiveColor, width: 0.3),
             ),

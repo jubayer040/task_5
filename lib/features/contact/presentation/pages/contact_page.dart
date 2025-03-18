@@ -19,7 +19,10 @@ class _ContactPageState extends State<ContactPage> {
       children: [
         MyDimens().getNormalAppBar("Gain Solution",
             [MyDimens().getNotificationIcon(3), SizedBox(width: 15)], context),
-        CmSearchField(controller: _searchFiled),
+        Padding(
+          padding: const EdgeInsets.all(15),
+          child: CmSearchField(controller: _searchFiled),
+        ),
         const SizedBox(height: 5),
         SizedBox(height: size.height * .7, child: ContactList()),
       ],

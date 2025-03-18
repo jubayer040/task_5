@@ -17,9 +17,7 @@ class CmSearchField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(15),
-      child: TextField(
+    return TextField(
         controller: controller,
         autofocus: false,
         textInputAction: TextInputAction.search,
@@ -55,7 +53,6 @@ class CmSearchField extends StatelessWidget {
         //         ),
         //         child: const Icon(CupertinoIcons.search, color: Colors.white),
         //       ),
-      ),
     );
   }
 }

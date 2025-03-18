@@ -1,6 +1,5 @@
 import 'dart:convert';
 import 'package:task_5/core/util/my_enum.dart';
-import 'package:task_5/features/ticket/data/repository/ticket_repo.dart';
 
 class TicketItem {
   final int id;

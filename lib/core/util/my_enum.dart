@@ -38,7 +38,7 @@ extension StatusExtension2 on TickerStatus {
       case TickerStatus.newStatus:
         return MyColor.skyPrimary;
       case TickerStatus.responseOverdue:
-        return Colors.deepOrange;
+        return Colors.orange;
       case TickerStatus.customerResponded:
         return Colors.deepPurple;
       default:

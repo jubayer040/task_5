@@ -18,7 +18,7 @@ class TicketRepo {
       name: "Noah",
       details: "Have to update UI. looks good, could be better with green",
       date: DateTime.now(),
-      ticketPriority: TicketPriority.low,
+      ticketPriority: TicketPriority.urgent,
     ),
     TicketItem(
       id: 302141442,
@@ -27,7 +27,7 @@ class TicketRepo {
       details:
           "Search view, which can display dynamic suggestions, is the focues state of enery that draws people's attention for sure",
       date: DateTime.now(),
-      ticketPriority: TicketPriority.low,
+      ticketPriority: TicketPriority.high,
     ),
     TicketItem(
       id: 402141442,
@@ -36,7 +36,7 @@ class TicketRepo {
       details:
           "Search view, which can display dynamic suggestions, is the focues state of enery that draws people's attention for sure",
       date: DateTime.now(),
-      ticketPriority: TicketPriority.low,
+      ticketPriority: TicketPriority.medium,
     ),
   ];
 }
