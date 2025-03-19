@@ -21,9 +21,12 @@ class ProfilePage extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  // name, surname, email
                   ProfileBasicInfo(),
+                  // assign-role
                   ProfileAssignedRole(),
                   const SizedBox(height: 15),
+                  // logout-button
                   ProfileLogoutButton(),
                 ],
               )),

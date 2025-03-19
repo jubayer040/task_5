@@ -44,11 +44,7 @@ class HomeNavBar extends StatelessWidget {
     final isSelect = currentPage == index;
     final color = isSelect ? MyColor.skyPrimary : MyColor.textColor;
     return GestureDetector(
-      onTap: () {
-        print("its called");
-
-        onPageChange(index);
-      },
+      onTap: () => onPageChange(index),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

@@ -18,7 +18,7 @@ class _TicketFilterPageState extends State<TicketFilterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MyDimens().getNormalAppBar("Filters", [], context, true),
+      appBar: MyDimens().getNormalAppBar("Filters", _getApplyButton, context, true),
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.all(15),
@@ -36,10 +36,9 @@ class _TicketFilterPageState extends State<TicketFilterPage> {
           ),
         ),
       ),
-      bottomNavigationBar: ElevatedButton(
-        onPressed: () {},
-        child: Text("Apply"),
-      ),
     );
   }
+
+  List<Widget> get _getApplyButton =>
+      [TextButton(onPressed: () {}, child: Text("Apply")),SizedBox(width: 15)];
 }

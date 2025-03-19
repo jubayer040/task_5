@@ -10,11 +10,15 @@ class ProfileBasicInfo extends StatelessWidget {
     return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          // title
           MyDimens().getBodySecondaryText("Basic info", context,
               color: MyColor.textColor),
           const SizedBox(height: 10),
+          // name
           _getBasicInfoItem("First Name", "Jb", context),
+          // last-name
           _getBasicInfoItem("Last Name", "Jason", context),
+          // email
           _getBasicInfoItem("Email", "jubayeral040@gmail.com", context),
         ],
      
