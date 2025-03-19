@@ -9,7 +9,6 @@ class ContactProvider with ChangeNotifier {
   List<ContactItem> get contactList => [..._contactList];
 
   Future<void> searchContactList(BuildContext context) async {
-   
     final result = await BaseClientClass.getData(
       path: Myconstant.contactListUrl,
       ctx: context,

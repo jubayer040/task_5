@@ -13,7 +13,7 @@ class MyDimens {
       future: future,
       builder: (context, snapShot) {
         if (snapShot.connectionState == ConnectionState.waiting) {
-          return getLoadingIndicator();
+          return getLoadingIndicator;
         } 
         // else if (snapShot.hasError) {
         //   return const Center(child: Text('Error Occured while Fetching!'));
@@ -75,7 +75,7 @@ class MyDimens {
             .copyWith(fontWeight: weight, color: color),
       );
 
-  Center getLoadingIndicator() =>
+  Center get getLoadingIndicator =>
       const Center(child: CircularProgressIndicator());
 
   Widget getPriorityBoxItem(String title, BuildContext context, Color? color) =>
@@ -85,6 +85,20 @@ class MyDimens {
           borderRadius: BorderRadius.circular(7),
           color: Colors.white,
           border: Border.all(color: MyColor.inActiveColor, width: .8),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey[300]!,
+              spreadRadius: 3,
+              blurRadius: 10,
+              offset: const Offset(2, 2),
+            ),
+            const BoxShadow(
+              color: Colors.white,
+              spreadRadius: 3,
+              blurRadius: 10,
+             offset: Offset(-2, -2),
+            ),
+          ],
         ),
         child: Row(
           mainAxisSize: MainAxisSize.min,

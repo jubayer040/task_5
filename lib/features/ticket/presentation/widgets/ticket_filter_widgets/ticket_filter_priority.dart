@@ -11,8 +11,10 @@ class TicketFilterPriority extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        // appbar
         MyDimens().getBodyTitleText("Brand", context),
         const SizedBox(height: 10),
+        // prioriy-dropdown
         CmDropDownField(
           dropList: TicketFilterRepo.ticketPriorites,
           selectedVal: selectedPriority,

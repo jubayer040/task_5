@@ -12,12 +12,14 @@ class TicketFilterBrand extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        // title
         MyDimens().getBodyTitleText("Brand", context),
         const SizedBox(height: 10),
         ...List.generate(
           brands.length,
           (i) => Row(
             children: [
+              // check-list
               ValueListenableBuilder(
                 valueListenable: selectedBrand,
                 builder: (context,value,_) {
@@ -27,8 +29,10 @@ class TicketFilterBrand extends StatelessWidget {
                   );
                 }
               ),
+              // logo
               Image.asset(brands[i].image),
               const SizedBox(width: 5),
+              // title
               Text(brands[i].title),
             ],
           ),

@@ -11,7 +11,7 @@ class ContactListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(15),
+      padding: EdgeInsets.all(10),
       margin: EdgeInsets.only(bottom: 15),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
@@ -20,10 +20,11 @@ class ContactListItem extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          // image
           Row(
             children: [
               CircleAvatar(
-                  radius: 18, backgroundImage: AssetImage(contact.image)),
+                  radius: 18, backgroundImage: NetworkImage(contact.image)),
               const SizedBox(width: 15),
               MyDimens().getBodyTitleText(contact.name, context),
               Spacer(),
@@ -31,10 +32,13 @@ class ContactListItem extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 20),
+          // email
           _getContactBodyItem(Icons.email_outlined, contact.email, context),
           const SizedBox(height: 5),
-          _getContactBodyItem(Icons.call_outlined, contact.contact, context),
+          // contact
+          _getContactBodyItem(Icons.call_outlined, "+${contact.contact}", context),
           const SizedBox(height: 5),
+          // location
           _getContactBodyItem(
               Icons.location_on_outlined, contact.address, context),
         ],
