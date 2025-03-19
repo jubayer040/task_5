@@ -8,7 +8,7 @@ import 'package:task_5/core/util/mydialog.dart';
 import 'package:task_5/core/util/mystring.dart';
 
 class BaseClientClass {
-  static final dio = Dio();
+  static final dio = Dio(BaseOptions(connectTimeout: Duration(seconds: 8)));
 
   static Future<dynamic> getData({
     required String path,

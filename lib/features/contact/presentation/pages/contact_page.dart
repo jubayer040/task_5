@@ -17,13 +17,16 @@ class _ContactPageState extends State<ContactPage> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        // appbar
         MyDimens().getNormalAppBar("Gain Solution",
             [MyDimens().getNotificationIcon(3), SizedBox(width: 15)], context),
+        // search field
         Padding(
           padding: const EdgeInsets.all(15),
           child: CmSearchField(controller: _searchFiled),
         ),
         const SizedBox(height: 5),
+        // contact-list
         SizedBox(height: size.height * .7, child: ContactList()),
       ],
     );

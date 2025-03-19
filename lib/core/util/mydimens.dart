@@ -14,9 +14,11 @@ class MyDimens {
       builder: (context, snapShot) {
         if (snapShot.connectionState == ConnectionState.waiting) {
           return getLoadingIndicator();
-        } else if (snapShot.hasError) {
-          return const Center(child: Text('Error Occured while Fetching!'));
-        } else {
+        } 
+        // else if (snapShot.hasError) {
+        //   return const Center(child: Text('Error Occured while Fetching!'));
+        // } 
+        else {
           return child;
         }
       },
