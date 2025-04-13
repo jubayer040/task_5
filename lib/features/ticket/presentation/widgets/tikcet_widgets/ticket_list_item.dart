@@ -17,9 +17,9 @@ class TicketListItem extends StatelessWidget {
         Container(
           padding: EdgeInsets.symmetric(horizontal: 15, vertical: 4),
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(7),
-            color: item.currentStatus.color.withOpacity(0.09),
-          ),
+              borderRadius: BorderRadius.circular(7),
+              color: item.currentStatus.color.withOpacity(0.09),
+              border: Border.all(color: Colors.white)),
           child: Text(
             item.currentStatus.label,
             style: TextStyle(

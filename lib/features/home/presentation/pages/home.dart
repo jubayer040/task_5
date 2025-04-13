@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:task_5/core/util/mydialog.dart';
 import 'package:task_5/features/contact/presentation/pages/contact_page.dart';
 import 'package:task_5/features/home/presentation/widgets/home_navbar.dart';
@@ -21,16 +22,21 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
-      onWillPop: () => MyDialog().showExitPopup(context),
+    return PopScope(
+      canPop: false,
+      onPopInvokedWithResult: (bool didPop, dynamic result) async {
+        if (!didPop) {
+          final shouldPop = await MyDialog().showExitPopup(context);
+          if (shouldPop) SystemNavigator.pop();
+        }
+      },
       child: Scaffold(
-          body: _pages[_currentPage],
-          bottomNavigationBar: 
-                HomeNavBar(currentPage: _currentPage, onPageChange: _onPageChange),
-        ),
-     
+        body: _pages[_currentPage],
+        bottomNavigationBar:
+            HomeNavBar(currentPage: _currentPage, onPageChange: _onPageChange),
+      ),
     );
   }
 
-  void _onPageChange(int i) => setState(() =>_currentPage=i);
+  void _onPageChange(int i) => setState(() => _currentPage = i);
 }

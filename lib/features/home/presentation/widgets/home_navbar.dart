@@ -30,7 +30,7 @@ class HomeNavBar extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          getNavBarItem(0, Icons.home, Icons.home_outlined, 'Home'),
+          getNavBarItem(0, Icons.home, Icons.home_outlined, 'Tickets'),
           getNavBarItem(
               1, Icons.contact_page, Icons.contact_page_outlined, 'Contacts'),
           getNavBarItem(2, Icons.person, Icons.person_outline, 'Profile'),

@@ -14,15 +14,14 @@ class TicketList extends StatelessWidget {
       padding: EdgeInsets.all(15),
       itemBuilder: (context, i) => Container(
         padding: EdgeInsets.all(10),
-        margin: EdgeInsets.only(bottom: 15),
+        margin: EdgeInsets.only(bottom: 12),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
-          color: MyColor.cardBackgroundColor
+          color: MyColor.cardBackgroundColor,
+          border: Border.all(color: Colors.white, width: 4),
         ),
-        child: TicketListItem(item: tickets[i])
+        child: TicketListItem(item: tickets[i]),
       ),
     );
   }
-
- 
 }
